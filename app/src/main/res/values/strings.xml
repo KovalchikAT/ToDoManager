@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ToDoManeger</string>
+    <string name="user_email">User email</string>
+    <string name="user_password">User password</string>
+    <string name="log_in">Log in</string>
+    <string name="sign_up">Sign up</string>
+    <string name="forgot_password">Forgot password</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

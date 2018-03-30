@@ -21,6 +21,7 @@ public class Task {
     private int workerId;
 
     private List<Task> subtasks; // список підзавдань для розподілу задачі між робітниками
+    private String taskName;
     private String taskDescription; // детальний опис завдання
     private String taskType; // тип завдання
 //примітки виконання
