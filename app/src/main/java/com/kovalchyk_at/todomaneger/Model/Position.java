@@ -7,13 +7,8 @@ import java.util.List;
  */
 
 public class Position {
-    private String company;
-    private String position;
-
-    private int hierarchyLevel;
-    private int positionsCount;
-
-    private List<String> seniorPosts;
-    private List<String> lowerPosts;
-
+    private Integer positionId;
+    private String positionName;
+    private Integer positionLevel;
+    private Integer positionCount;
 }

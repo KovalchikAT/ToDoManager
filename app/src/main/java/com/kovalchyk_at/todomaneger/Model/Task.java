@@ -8,19 +8,18 @@ import java.util.List;
  */
 
 public class Task {
-    private int id;
+    private Integer taskId;
 // дати для роботи з завданням
-    private Date dateKreate; // створення задачі
+    private Date dateCreate; // створення задачі
     private Date dateCorrection; // останнього коригування
-    private Date dateRealization; // реалізації запропонована замовником/начальником
     private Date dateRealizationPlan; // планова встановлена менеджером
     private Date dateRealizationActual; // фактичного виконання
 // іd замовника, менеджера та робітника
-    private int customerId;
-    private int managerId;
-    private int workerId;
+    private Integer customerId;
+    private Integer managerId;
+    private Integer workerId;
 
-    private List<Task> subtasks; // список підзавдань для розподілу задачі між робітниками
+    private List<Integer> subtaskId; // список підзавдань для розподілу задачі між робітниками
     private String taskName;
     private String taskDescription; // детальний опис завдання
     private String taskType; // тип завдання
@@ -29,8 +28,11 @@ public class Task {
     private String managerNote;
     private String workerNote;
 //прапори для позначення виконаної задачі/підзадачі
-    private Boolean customerNoteBool;
-    private Boolean managerNoteBool;
-    private Boolean workerNoteBool;
+    private String customerNoteFlag;
+    private String managerNoteFlag;
+    private String workerNoteFlag;
 
+    private Date customerNoteTime;
+    private Date managerNoteTime;
+    private Date workerNoteTime;
 }

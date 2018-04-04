@@ -10,6 +10,7 @@ import android.widget.Toast;
 import com.kovalchyk_at.todomaneger.Fragments.FragmentLogin;
 import com.kovalchyk_at.todomaneger.Fragments.FragmentLogout;
 import com.kovalchyk_at.todomaneger.Helper.Authentication;
+import com.kovalchyk_at.todomaneger.Helper.DBHelper;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private FragmentManager fragmentManager;
     private Toast toastMesege;
 
-    public Toast getToastMesege() {
-        return toastMesege;
+    public void setToast(String str){
+        toastMesege.makeText(this,str,Toast.LENGTH_LONG);
     }
 
     public void setFragment (Fragment fgm){
@@ -26,12 +27,14 @@ public class MainActivity extends AppCompatActivity {
         fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.mainFrameLayout, fragment).commit();
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         Authentication.initialize();
+
     }
 
     @Override
