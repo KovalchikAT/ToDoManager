@@ -1,4 +1,4 @@
-package com.kovalchyk_at.todomaneger.Model;
+package com.kovalchyk_at.todomanager.Model;
 
 import java.util.List;
 

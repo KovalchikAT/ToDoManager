@@ -1,4 +1,4 @@
-package com.kovalchyk_at.todomaneger.Helper;
+package com.kovalchyk_at.todomanager.Helper;
 
 import android.content.Context;
 import android.util.Log;
@@ -9,7 +9,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.kovalchyk_at.todomaneger.Model.User;
 
 /**
  * Created by Kovalchyk_AT on 02.04.2018.

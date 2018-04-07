@@ -1,4 +1,4 @@
-package com.kovalchyk_at.todomaneger.Fragments;
+package com.kovalchyk_at.todomanager.Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,10 +7,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
-import com.kovalchyk_at.todomaneger.Helper.Authentication;
-import com.kovalchyk_at.todomaneger.Helper.DBHelper;
+import com.kovalchyk_at.todomanager.Helper.Authentication;
+import com.kovalchyk_at.todomanager.Helper.DBHelper;
 import com.kovalchyk_at.todomaneger.R;
 
 /**

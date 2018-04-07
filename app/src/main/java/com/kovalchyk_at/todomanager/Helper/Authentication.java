@@ -1,6 +1,5 @@
-package com.kovalchyk_at.todomaneger.Helper;
+package com.kovalchyk_at.todomanager.Helper;
 
-import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
@@ -9,7 +8,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.kovalchyk_at.todomaneger.Model.User;
+import com.kovalchyk_at.todomanager.Model.User;
 
 /**
  * Created by Kovalchyk_AT on 23.03.2018.

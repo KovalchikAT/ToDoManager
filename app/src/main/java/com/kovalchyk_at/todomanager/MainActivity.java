@@ -1,4 +1,4 @@
-package com.kovalchyk_at.todomaneger;
+package com.kovalchyk_at.todomanager;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,10 +7,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.kovalchyk_at.todomaneger.Fragments.FragmentLogin;
-import com.kovalchyk_at.todomaneger.Fragments.FragmentLogout;
-import com.kovalchyk_at.todomaneger.Helper.Authentication;
-import com.kovalchyk_at.todomaneger.Helper.DBHelper;
+import com.kovalchyk_at.todomanager.Fragments.FragmentLogin;
+import com.kovalchyk_at.todomanager.Fragments.FragmentLogout;
+import com.kovalchyk_at.todomanager.Helper.Authentication;
 
 public class MainActivity extends AppCompatActivity {
 
