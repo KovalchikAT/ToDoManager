@@ -1,5 +1,6 @@
 package com.kovalchyk_at.todomanager.Helper;
 
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
@@ -14,14 +15,19 @@ import com.kovalchyk_at.todomanager.Model.User;
  * Created by Kovalchyk_AT on 23.03.2018.
  */
 
-public class Authentication {
+public class Authentication extends AsyncTask<Void,Void,Void>{
+    @Override
+    protected Void doInBackground(Void... voids) {
+        initialize();
+        return null;
+    }
+
     private static FirebaseAuth auth;
     private static FirebaseUser currentUser;
 
     public static void initialize() {
     /* in the onCreate() initialize FirebaseAuth*/
         auth = FirebaseAuth.getInstance();
-
     }
 
     public static boolean isSigned() {
@@ -66,8 +72,8 @@ public class Authentication {
 
     public static void getUserDate(User user) {
         if (currentUser != null) {
-            user.setName(currentUser.getDisplayName());
-            user.setId(currentUser.getUid());
+            user.setUserName(currentUser.getDisplayName());
+            user.setUserId(currentUser.getUid());
         }
     }
 
@@ -76,4 +82,21 @@ public class Authentication {
         Log.w("MainActivity", "logout user"+Authentication.isSigned());
     }
 
+    class MyTask extends AsyncTask<Void,Void,Void>{
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+        }
+    }
 }

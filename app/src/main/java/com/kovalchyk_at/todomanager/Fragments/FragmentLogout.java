@@ -10,25 +10,21 @@ import android.widget.Button;
 
 import com.kovalchyk_at.todomanager.Helper.Authentication;
 import com.kovalchyk_at.todomanager.Helper.DBHelper;
-import com.kovalchyk_at.todomaneger.R;
+import com.kovalchyk_at.todomanager.R;
 
 /**
  * Created by Kovalchyk_AT on 26.03.2018.
+ * просто затичка, перенести функціонал в
  */
 
 public class FragmentLogout extends Fragment {
     private Button logoutButton;
-    private DBHelper helper;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View retV = inflater.inflate(R.layout.fragment_logut, null);
-
-        helper = new DBHelper(getActivity().getApplicationContext());
-
         logoutButton = retV.findViewById(R.id.buttonLogout);
-
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

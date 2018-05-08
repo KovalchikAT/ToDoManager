@@ -35,4 +35,31 @@ public class Task {
     private Date customerNoteTime;
     private Date managerNoteTime;
     private Date workerNoteTime;
+
+    public Task() {
+    }
+
+    public Task(Integer taskId, Date dateCreate, Date dateCorrection, Date dateRealizationPlan, Date dateRealizationActual, Integer customerId, Integer managerId, Integer workerId, List<Integer> subtaskId, String taskName, String taskDescription, String taskType, String customerNote, String managerNote, String workerNote, String customerNoteFlag, String managerNoteFlag, String workerNoteFlag, Date customerNoteTime, Date managerNoteTime, Date workerNoteTime) {
+        this.taskId = taskId;
+        this.dateCreate = dateCreate;
+        this.dateCorrection = dateCorrection;
+        this.dateRealizationPlan = dateRealizationPlan;
+        this.dateRealizationActual = dateRealizationActual;
+        this.customerId = customerId;
+        this.managerId = managerId;
+        this.workerId = workerId;
+        this.subtaskId = subtaskId;
+        this.taskName = taskName;
+        this.taskDescription = taskDescription;
+        this.taskType = taskType;
+        this.customerNote = customerNote;
+        this.managerNote = managerNote;
+        this.workerNote = workerNote;
+        this.customerNoteFlag = customerNoteFlag;
+        this.managerNoteFlag = managerNoteFlag;
+        this.workerNoteFlag = workerNoteFlag;
+        this.customerNoteTime = customerNoteTime;
+        this.managerNoteTime = managerNoteTime;
+        this.workerNoteTime = workerNoteTime;
+    }
 }

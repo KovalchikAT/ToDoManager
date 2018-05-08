@@ -12,8 +12,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.kovalchyk_at.todomanager.ChooseCreateDialog;
 import com.kovalchyk_at.todomanager.Helper.Authentication;
-import com.kovalchyk_at.todomaneger.R;
+import com.kovalchyk_at.todomanager.R;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -49,22 +50,23 @@ public class FragmentLogin extends Fragment {
                 Authentication.logInUser(emailEditText.getText().toString(), passwordEditText.getText().toString());
                 if (Authentication.isSigned()) {
                     getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainFrameLayout, new FragmentLogout()).commit();
-                    Log.d("MainActivity", "on login clic");
+                    Log.d("MainActivity", "on log in click");
                     Toast.makeText(getActivity().getApplicationContext(), "login" , Toast.LENGTH_LONG).show();
                 } else {
-                    signupButton.setVisibility(View.VISIBLE);
                     forgotPasswordTV.setVisibility(View.VISIBLE);
                 }
-
             }
         });
 
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Authentication.createUser(emailEditText.getText().toString(), passwordEditText.getText().toString());
+                ChooseCreateDialog dialogFragment = new ChooseCreateDialog();
+                getActivity().getSupportFragmentManager().beginTransaction().add(dialogFragment,"dialog");
+                dialogFragment.show(getActivity().getSupportFragmentManager(),"dialog");
+                //Authentication.createUser(emailEditText.getText().toString(), passwordEditText.getText().toString());
                 if (Authentication.isSigned()) {
-                    Log.d("MainActivity", "on signup clic");
+                    Log.d("MainActivity", "on sign up click");
                     Toast.makeText(getActivity().getApplicationContext(), "signUp",Toast.LENGTH_LONG).show();
                     //getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainFrameLayout, new FragmentLogout()).commit();
                     //create user fragm

@@ -6,6 +6,14 @@ public class ToDoManagerDB {
     private List<Company> company;
     private List<User> user;
 
+    public ToDoManagerDB(List<Company> company, List<User> user) {
+        this.company = company;
+        this.user = user;
+    }
+
+    public ToDoManagerDB() {
+    }
+
     public List<Company> getCompany() {
         return company;
     }

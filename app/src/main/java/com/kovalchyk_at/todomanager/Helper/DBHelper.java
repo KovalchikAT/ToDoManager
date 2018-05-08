@@ -9,83 +9,66 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.kovalchyk_at.todomanager.Model.Company;
+import com.kovalchyk_at.todomanager.Model.ToDoManagerDB;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Kovalchyk_AT on 02.04.2018.
  */
 
 public class DBHelper {
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference();
-    DatabaseReference dbUserRef = myRef.child("User");
-    DatabaseReference dbTaskRef = myRef.child("Task");
-    DatabaseReference dbCompanyRef = myRef.child("Company");
-    String s ;
-
-    public void setTXT (String str){
-        myRef.child("txt").setValue(str);
-    }
-    public  String  getS(){return s;}
+    FirebaseDatabase database;
+    DatabaseReference myRef;
+    DatabaseReference companyRef;
+    ArrayList <Company> companyList;
+    HashMap <String,Company> comapnyMap;
     public DBHelper(final Context context) {
         database = FirebaseDatabase.getInstance();
-        myRef.child("txt").addValueEventListener(new ValueEventListener() {
+        myRef = database.getReference();
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String txt = dataSnapshot.getValue(String.class);
-                s= txt;
-                Toast.makeText(context,txt,Toast.LENGTH_LONG);
+                companyList = new ArrayList<>();
+                comapnyMap = new HashMap<>();
+                for (DataSnapshot ds : dataSnapshot.child("company").getChildren()){
+                    Company company = ds.getValue(Company.class);
+                    companyList.add(company);
+                    comapnyMap.put(company.getCompanyId(),company);
+                    //company.setCompanyName(ds.child("0").getValue(Company.class).getCompanyName());
+                    //company = ds.child("0").getValue(Company.class);
+                }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
             }
         });
-
-
-        /*
-        ValueEventListener userDataBaseListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // Get Post object and use the values to update the UI
-                User user = dataSnapshot.getValue(User.class);
-                // ...
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                // Getting Post failed, log a message
-                Log.w("TAG", "loadPost:onCancelled", databaseError.toException());
-                // ...
-            }
-        };*/
-
-        /*myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                *//*String value = dataSnapshot.getValue(String.class);
-                Log.d("DB", "Value is: " + value);*//*
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w("DB", "Failed to read value.", error.toException());
-            }
-        });*/
     }
 
-    public void writeDB(String s) {
-        myRef.child("User").child("0").child("id").setValue(s);
-        Log.w("writeDB", "xz");
+    public void writeDB(String s,String childNumber ) {
+        myRef.child("user").child(childNumber).child("userId").setValue(s);
+        Log.w("writeDB", "xz "+s);
+    }
+
+    public void createNewCompany (Company company){
+        myRef.child("company").child(company.getCompanyId()).setValue(company);
+    }
+
+    public  Company getCompany(String companyMapId){
+        return comapnyMap.get(companyMapId);
+    }
+
+    public Company getCompany(int companyArrayId){
+        return companyList.get(companyArrayId);
     }
 
     ValueEventListener userDataBaseListener (){
-
         return null;
     }
-
-
 }
