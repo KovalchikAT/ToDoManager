@@ -55,34 +55,34 @@
                         android:id="@+id/companyNameAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="company name "
+                        android:hint="company name "
                         android:textSize="18sp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/companyIdAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="company id"/>
+                        android:hint="company id"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/companyWebsiteAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="company website"
+                        android:hint="company website"
                         android:textSize="14sp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/companyEmailAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="company email"
+                        android:hint="company email"
                         android:textSize="14sp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/companyPhoneAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="company phone"
+                        android:hint="company phone"
                         android:textSize="14sp"/>
 
                 </LinearLayout>
@@ -142,21 +142,21 @@
                         android:id="@+id/companyCountryAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="country"
+                        android:hint="country"
                         android:textSize="14sp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/companyCityAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="city"
+                        android:hint="city"
                         android:textSize="14sp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/companySuiteAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="suite"
+                        android:hint="suite"
                         android:textSize="14sp"/>
 
                 </LinearLayout>
@@ -171,21 +171,21 @@
                         android:id="@+id/companyRegionAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="region"
+                        android:hint="region"
                         android:textSize="14sp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/companyStreetCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="street"
+                        android:hint="street"
                         android:textSize="14sp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/companyZipCodeAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="zip code"
+                        android:hint="zip code"
                         android:textSize="14sp"/>
 
                 </LinearLayout>

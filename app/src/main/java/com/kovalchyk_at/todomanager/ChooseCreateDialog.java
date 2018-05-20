@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.kovalchyk_at.todomanager.Fragments.FragmentCompanyDetail;
+import com.kovalchyk_at.todomanager.Fragments.FragmentUserDetail;
 
 
 public class ChooseCreateDialog extends DialogFragment {
@@ -36,7 +37,7 @@ public class ChooseCreateDialog extends DialogFragment {
         createUserButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainFrameLayout, new FragmentUserDetail()).commit();
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.mainFrameLayout, new FragmentUserDetail()).commit();
                 getDialog().cancel();
             }
         });

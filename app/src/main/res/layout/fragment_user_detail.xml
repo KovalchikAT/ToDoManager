@@ -58,34 +58,34 @@
                         android:id="@+id/userSurnemeAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="surname "
+                        android:hint="surname "
                         android:textSize="18sp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/userNameAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="name"/>
+                        android:hint="name"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/userWebsiteAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="user website"
+                        android:hint=" website"
                         android:textSize="14sp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/userEmailAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="email"
+                        android:hint="email"
                         android:textSize="14sp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/userPhoneAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="phone"
+                        android:hint="phone"
                         android:textSize="14sp"/>
 
                 </LinearLayout>
@@ -144,21 +144,21 @@
                         android:id="@+id/userCountryAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="country"
+                        android:hint="country"
                         android:textSize="14sp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/userCityAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="city"
+                        android:hint="city"
                         android:textSize="14sp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/userSuiteCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="suite"
+                        android:hint="suite"
                         android:textSize="14sp"/>
 
                 </LinearLayout>
@@ -173,21 +173,21 @@
                         android:id="@+id/userRegionAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="region"
+                        android:hint="region"
                         android:textSize="14sp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/userStreetCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="street"
+                        android:hint="street"
                         android:textSize="14sp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/userZipCodeAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="zip code"
+                        android:hint="zip code"
                         android:textSize="14sp"/>
 
                 </LinearLayout>
@@ -215,7 +215,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_weight="1"
                 android:orientation="horizontal"
-                android:padding="8dp">
+                android:padding="4dp">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -228,13 +228,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="company Id"/>
+                        android:text="company Id"
+                        android:textSize="12sp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/userCompanyIdAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="14sp"/>
+                        android:textSize="12sp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -248,13 +249,35 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="company name"/>
+                        android:text="company name"
+                        android:textSize="12sp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/userCompanyNameAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="14sp"/>
+                        android:textSize="12sp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:gravity="center|start"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="position Id"
+                        android:textSize="12sp"/>
+
+                    <AutoCompleteTextView
+                        android:id="@+id/userPositionIdAutoCompleteTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -268,13 +291,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="user's position"/>
+                        android:text="user's position"
+                        android:textSize="12sp"/>
 
                     <AutoCompleteTextView
                         android:id="@+id/userPositionAutoCompleteTextView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="14sp"/>
+                        android:textSize="12sp"/>
                 </LinearLayout>
             </LinearLayout>
 

@@ -25,6 +25,10 @@ public class Authentication extends AsyncTask<Void,Void,Void>{
     private static FirebaseAuth auth;
     private static FirebaseUser currentUser;
 
+
+    public static String getCurrentUserId() {
+        return currentUser.getUid();
+    }
     public static void initialize() {
     /* in the onCreate() initialize FirebaseAuth*/
         auth = FirebaseAuth.getInstance();

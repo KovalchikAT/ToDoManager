@@ -3,14 +3,17 @@ package com.kovalchyk_at.todomanager.Fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import android.widget.Toast;
 
 import com.kovalchyk_at.todomanager.Helper.Authentication;
 import com.kovalchyk_at.todomanager.Helper.DBHelper;
@@ -47,13 +50,32 @@ public class FragmentCompanyDetail extends Fragment {
         saveCompanyDataButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             //helper.createNewCompany(readCompanyFromView());
-             //showCompanyFromDB(helper.getCompany(companyIdAutoCompleteTextView.getText().toString()));
-             showCompanyFromDB(helper.getCompany("0"));
+                //helper.createNewCompany(readCompanyFromView());
+                //showCompanyFromDB(helper.getCompany(companyIdAutoCompleteTextView.getText().toString()));
+                if (!companyIdAutoCompleteTextView.getText().toString().isEmpty()) {
+                    showCompanyFromDB(helper.getCompany(companyIdAutoCompleteTextView.getText().toString()));
+                } else {
+                    Toast.makeText(getActivity().getApplicationContext(), "fied Id don't be empty", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
         return retV;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        Log.e("tag", "log out unvisible");
+        menu.findItem(R.id.log_out_mi).setVisible(true);
+        super.onCreateOptionsMenu(menu, inflater);
+
+
     }
 
     Company readCompanyFromView() {
@@ -68,10 +90,10 @@ public class FragmentCompanyDetail extends Fragment {
                 companyStreetAutoCompleteTextView.getText().toString(),
                 companySuiteAutoCompleteTextView.getText().toString(),
                 companyZipCodeAutoCompleteTextView.getText().toString(),
-                0,0);
+                0, 0);
     }
 
-    void showCompanyFromDB(Company company){
+    private void showCompanyFromDB(Company company) {
         companyIdAutoCompleteTextView.setText(company.getCompanyId());
         companyNameAutoCompleteTextView.setText(company.getCompanyName());
         companyPhoneAutoCompleteTextView.setText(company.getCompanyPhone());

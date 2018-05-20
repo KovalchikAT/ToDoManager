@@ -14,8 +14,75 @@ public class User {
     private Address userAddress;
     private String userPhone;
     private String userWebsite;
-    private Integer userPositionId;
+    private String userPositionId;
+    private String userCompanyId;
+    private String userCompany;
+    private String userPosition;
     private List<Integer> userTaskId;
+
+    public User() {
+    }
+
+    /**
+    *@param userId,
+     *@param userName,
+     *@param userSurname,
+     *@param userEmail,
+     *@param userAddress,
+     *@param userPhone,
+     *@param userWebsite,
+     *@param userPositionId,
+     *@param userCompanyId,
+     *@param userCompany,
+     *@param userPosition
+    */
+    public User(String userId,
+                String userName,
+                String userSurname,
+                String userEmail,
+                Address userAddress,
+                String userPhone,
+                String userWebsite,
+                String userPositionId,
+                String userCompanyId,
+                String userCompany,
+                String userPosition) {
+        this.userId = userId;
+        this.userName = userName;
+        this.userSurname = userSurname;
+        this.userEmail = userEmail;
+        this.userAddress = userAddress;
+        this.userPhone = userPhone;
+        this.userWebsite = userWebsite;
+        this.userPositionId = userPositionId;
+        this.userCompanyId = userCompanyId;
+        this.userCompany = userCompany;
+        this.userPosition = userPosition;
+    }
+
+    public String getUserCompany() {
+        return userCompany;
+    }
+
+    public void setUserCompany(String userCompany) {
+        this.userCompany = userCompany;
+    }
+
+    public String getUserPosition() {
+        return userPosition;
+    }
+
+    public void setUserPosition(String userPosition) {
+        this.userPosition = userPosition;
+    }
+
+    public String getUserCompanyId() {
+        return userCompanyId;
+    }
+
+    public void setUserCompanyId(String userCompanyId) {
+        this.userCompanyId = userCompanyId;
+    }
 
     public String getUserId() {
         return userId;
@@ -73,11 +140,11 @@ public class User {
         this.userWebsite = userWebsite;
     }
 
-    public Integer getUserPositionId() {
+    public String getUserPositionId() {
         return userPositionId;
     }
 
-    public void setUserPositionId(Integer userPositionId) {
+    public void setUserPositionId(String userPositionId) {
         this.userPositionId = userPositionId;
     }
 

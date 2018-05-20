@@ -12,7 +12,9 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.kovalchyk_at.todomanager.Model.Company;
+import com.kovalchyk_at.todomanager.Model.Task;
 import com.kovalchyk_at.todomanager.Model.ToDoManagerDB;
+import com.kovalchyk_at.todomanager.Model.User;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -25,24 +27,18 @@ import java.util.HashMap;
 public class DBHelper {
     FirebaseDatabase database;
     DatabaseReference myRef;
-    DatabaseReference companyRef;
-    ArrayList <Company> companyList;
+    DataSnapshot ds;
     HashMap <String,Company> comapnyMap;
+    HashMap <String,User> userMap;
     public DBHelper(final Context context) {
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference();
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        comapnyMap = new HashMap<>();
+        userMap = new HashMap<>();
+        myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                companyList = new ArrayList<>();
-                comapnyMap = new HashMap<>();
-                for (DataSnapshot ds : dataSnapshot.child("company").getChildren()){
-                    Company company = ds.getValue(Company.class);
-                    companyList.add(company);
-                    comapnyMap.put(company.getCompanyId(),company);
-                    //company.setCompanyName(ds.child("0").getValue(Company.class).getCompanyName());
-                    //company = ds.child("0").getValue(Company.class);
-                }
+                ds = dataSnapshot;
             }
 
             @Override
@@ -60,15 +56,28 @@ public class DBHelper {
         myRef.child("company").child(company.getCompanyId()).setValue(company);
     }
 
+    public void createNewUser (User user){
+        myRef.child("user").child(user.getUserId()).setValue(user);
+    }
+
+    public void createNewTask (Task task){
+        myRef.child("task").child(task.getTaskId()).setValue(task);
+    }
+
     public  Company getCompany(String companyMapId){
+        for (DataSnapshot dsi : ds.child("company").getChildren()){
+            Company company = dsi.getValue(Company.class);
+            comapnyMap.put(company.getCompanyId(),company);
+        }
         return comapnyMap.get(companyMapId);
     }
 
-    public Company getCompany(int companyArrayId){
-        return companyList.get(companyArrayId);
+    public User getUser(String userMapId){
+        for (DataSnapshot dsi : ds.child("company").getChildren()){
+            User user = dsi.getValue(User.class);
+            userMap.put(user.getUserId(),user);
+        }
+        return userMap.get(userMapId);
     }
 
-    ValueEventListener userDataBaseListener (){
-        return null;
-    }
 }
